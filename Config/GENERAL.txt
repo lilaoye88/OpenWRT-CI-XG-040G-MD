@@ -1,4 +1,17 @@
 #科学插件调整
+CONFIG_PACKAGE_luci-app-passwall=y
+CONFIG_PACKAGE_luci-i18n-passwall-zh-cn=y
+# PassWall 核心功能依赖（如果你需要对应的协议，必须选 =y，不需要的可以删掉或改成 =n）
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Sing-Box=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Xray=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Hysteria2=y
+# PassWall 必备核心工具组件
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ChinaDNS_NG=y
+# 确保内核网络分流依赖开启（你的配置里已经有了部分，这里作为补充和安全兜底）
+CONFIG_PACKAGE_kmod-nft-tproxy=y
+CONFIG_PACKAGE_kmod-tun=y
+CONFIG_PACKAGE_ip-full=y
+#科学插件调整
 #CONFIG_PACKAGE_luci-app-openclash=y
 #lucky
 #CONFIG_PACKAGE_luci-app-lucky=y
